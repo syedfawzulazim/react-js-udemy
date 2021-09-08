@@ -1,5 +1,5 @@
 import Expenses from "./components/expense/Expenses"
-
+import NewExpense from "./components/NewExpense/NewExpense";
 
 function App() {
 
@@ -13,6 +13,7 @@ function App() {
   return (
     <div className="App">
       <h2 style={{ textAlign: 'center', padding: "20px", fontSize: "2.5rem" }}>Your Daily Expense Calculator</h2>
+      <NewExpense />
       <Expenses items={expenses} />
     </div>
   );

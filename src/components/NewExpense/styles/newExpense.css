@@ -1,0 +1,42 @@
+.new-expense {
+  background-color: rgb(53, 70, 70);
+  max-width: min-content;
+  text-align: center;
+  margin: 0 auto;
+  padding: 10px 25px;
+}
+
+.new-expense__controls {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: min-content;
+  font-size: large;
+}
+.new-expense__control {
+  padding: 20px;
+}
+.new-expense__control > input {
+  font: inherit;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 15rem;
+  max-width: 100%;
+}
+.new-expense__actions {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.new-expense__actions > button {
+  font-size: larger;
+  background-color: rgb(6, 32, 32);
+  color: white;
+  padding: 5px 25px;
+  cursor: pointer;
+}
+
+.new-expense__actions button:hover {
+  background-color: rgb(75, 76, 146);
+}
