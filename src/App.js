@@ -10,10 +10,18 @@ function App() {
     { id: 'e4', title: 'Transport', amount: 60, date: new Date(2021, 5, 25) }
   ]
 
+  const saveExpenseDataHandler = (enteredExpenseDate) => {
+    const expenseDate = {
+      ...enteredExpenseDate,
+      id: Math.random().toString()
+    };
+    console.log(expenseDate);
+  };
+
   return (
     <div className="App">
       <h2 style={{ textAlign: 'center', padding: "20px", fontSize: "2.5rem" }}>Your Daily Expense Calculator</h2>
-      <NewExpense />
+      <NewExpense onSaveExpenseData={saveExpenseDataHandler} />
       <Expenses items={expenses} />
     </div>
   );
