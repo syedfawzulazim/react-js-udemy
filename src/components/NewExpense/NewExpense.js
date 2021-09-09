@@ -45,11 +45,12 @@ function NewExpense(props) {
 
         const expenseData = {
             title: enteredTitle,
-            amoount: enteredAmount,
+            amount: enteredAmount,
             date: new Date(enteredDate)
         }
 
-        props.onSaveExpenseData(expenseData)
+        props.onSaveExpenseData(expenseData);
+
         setEnteredTitle('');
         setEnteredAmount('');
         setEnteredDate('');
