@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 
 import './styles/expenses.css'
-import ExpenseItem from "./ExpenseItem"
 import ExpensesFilter from '../ExpenseFilter/ExpenseFilter'
+import ExpensesList from '../ExpensesList/ExpensesList';
+import ExpenseChart from './ExpenseChart';
 
 function Expenses({ items }) {
 
@@ -12,15 +13,27 @@ function Expenses({ items }) {
         setFilteredYear(selectedYear);
     }
 
+    const filteredExpenses = items.filter((item) => {
+        return filteredYear === item.date.getFullYear().toString();
+    })
+
+
+
     return (
         <div className="expenses">
-            <ExpensesFilter firstSelected={filteredYear} onChangeFilter={filterChangeHandler} />
-            <ExpenseItem title={items[0].title} amount={items[0].amount} date={items[0].date} />
-            <ExpenseItem title={items[1].title} amount={items[1].amount} date={items[1].date} />
-            <ExpenseItem title={items[2].title} amount={items[2].amount} date={items[2].date} />
-            <ExpenseItem title={items[3].title} amount={items[3].amount} date={items[3].date} />
+            <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler} />
+            <ExpenseChart expenses={filteredExpenses} />
+            <ExpensesList items={filteredExpenses} />
+
         </div>
     )
 }
 
 export default Expenses
+
+// <ExpenseItem
+// key={expense.id}
+// title={expense.title}
+// amount={expense.amount}
+// date={expense.date}
+// />

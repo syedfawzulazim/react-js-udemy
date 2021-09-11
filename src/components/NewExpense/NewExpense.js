@@ -6,6 +6,7 @@ function NewExpense(props) {
     const [enteredAmount, setEnteredAmount] = useState('');
     const [enteredDate, setEnteredDate] = useState('');
 
+    const [showForm, setShowForm] = useState(false);
 
     //one state to maintain all
     // const [userInput, setUserInput] = useState({
@@ -45,19 +46,24 @@ function NewExpense(props) {
 
         const expenseData = {
             title: enteredTitle,
-            amoount: enteredAmount,
+            amount: +enteredAmount,
             date: new Date(enteredDate)
         }
 
-        props.onSaveExpenseData(expenseData)
+        props.onSaveExpenseData(expenseData);
+
         setEnteredTitle('');
         setEnteredAmount('');
         setEnteredDate('');
     };
 
+    const onShowForm = () => {
+        setShowForm(true);
+    }
+
     return (
         <div className="new-expense">
-            <form onSubmit={submitHandler}>
+            {showForm ? (<form onSubmit={submitHandler}>
                 <div className="new-expense__controls">
                     <div className="new-expense__control">
                         <label>Title</label>
@@ -73,9 +79,18 @@ function NewExpense(props) {
                     </div>
                 </div>
                 <div className="new-expense__actions">
+                    <button type="button" onClick={() => setShowForm(false)}>Cancle</button>
+                </div>
+                <div className="new-expense__actions">
                     <button type="submit">Add Expense</button>
                 </div>
-            </form>
+            </form>) :
+                (<div className="new-expense__actions">
+                    <button className="new-expense__actions" onClick={onShowForm}>Add New Expenses</button>
+                </div>
+                )
+            }
+
         </div>
     )
 }

@@ -37,6 +37,10 @@
   text-align: center;
   margin-bottom: 20px;
 }
+.new-expense__actions > :last-of-type {
+  margin-bottom: 0px;
+  margin-top: 20px;
+}
 
 .new-expense__actions > button {
   font-size: larger;
