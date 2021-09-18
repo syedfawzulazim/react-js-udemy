@@ -115,7 +115,7 @@ function App() {
       {/* Section 8 */}
 
       <AddUser onAddUser={addUserHandler} />
-      <UserList users={usersList}> Adnan</UserList>
+      <UserList users={usersList} />
 
 
 

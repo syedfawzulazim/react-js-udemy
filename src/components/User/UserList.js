@@ -10,7 +10,6 @@ function UserList(props) {
                         <li>{user.name}</li>
                     ))
                 }
-                {props.children}
             </ul>
         </Card>
 
