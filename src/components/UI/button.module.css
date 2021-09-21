@@ -1,0 +1,17 @@
+.btn {
+  background-color: rgb(214, 199, 194);
+  padding: 5px 12px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn:active {
+  background: #61688b;
+  border-color: #121013;
+  color: aliceblue;
+}
+
+.btn:focus {
+  outline: none;
+}

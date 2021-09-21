@@ -1,9 +1,13 @@
 import React, { useState } from 'react'
+import Login from 'c:/users/hp/downloads/01-starting-project/src/components/login/login';
 // import Expenses from "./components/expense/Expenses"
 // import NewExpense from "./components/NewExpense/NewExpense";
 
-import CourseGoalList from "./components/CourseGoals/CourseGoalList/CourseGoalList"
-import CourseInput from "./components/CourseGoals/CourseInput/CourseInput"
+// import CourseGoalList from "./components/CourseGoals/CourseGoalList/CourseGoalList"
+// import CourseInput from "./components/CourseGoals/CourseInput/CourseInput"
+
+// import AddUser from "./components/User/AddUser"
+// import UserList from "./components/User/UserList"
 
 
 // const DUMMY_EXPENSE = [
@@ -34,38 +38,54 @@ function App() {
   // section 6
 
 
-  const [courseGoals, setCourseGoals] = useState([
-    { text: 'Do all exercises!', id: 'g1' },
-    { text: 'Finish the course!', id: 'g2' }
-  ]);
+  // const [courseGoals, setCourseGoals] = useState([
+  //   { text: 'Do all exercises!', id: 'g1' },
+  //   { text: 'Finish the course!', id: 'g2' }
+  // ]);
 
-  const addGoalHandler = enteredText => {
-    setCourseGoals(prevGoals => {
-      const updatedGoals = [...prevGoals];
-      console.log(updatedGoals)
+  // const addGoalHandler = enteredText => {
+  //   setCourseGoals(prevGoals => {
+  //     const updatedGoals = [...prevGoals];
+  //     console.log(updatedGoals)
 
-      updatedGoals.unshift({ text: enteredText, id: Math.random().toString() });
-      console.log(updatedGoals)
-      return updatedGoals;
-    });
-  };
+  //     updatedGoals.unshift({ text: enteredText, id: Math.random().toString() });
+  //     console.log(updatedGoals)
+  //     return updatedGoals;
+  //   });
+  // };
 
-  const deleteItemHandler = goalId => {
-    setCourseGoals(prevGoals => {
-      const updatedGoals = prevGoals.filter(goal => goal.id !== goalId);
-      return updatedGoals;
-    });
-  };
+  // const deleteItemHandler = goalId => {
+  //   setCourseGoals(prevGoals => {
+  //     const updatedGoals = prevGoals.filter(goal => goal.id !== goalId);
+  //     return updatedGoals;
+  //   });
+  // };
 
-  let content = (
-    <p style={{ textAlign: 'center' }}>No goals found. Maybe add one?</p>
-  );
+  // let content = (
+  //   <p style={{ textAlign: 'center' }}>No goals found. Maybe add one?</p>
+  // );
 
-  if (courseGoals.length > 0) {
-    content = (
-      <CourseGoalList items={courseGoals} onDeleteItem={deleteItemHandler} />
-    );
-  }
+  // if (courseGoals.length > 0) {
+  //   content = (
+  //     <CourseGoalList items={courseGoals} onDeleteItem={deleteItemHandler} />
+  //   );
+  // }
+
+
+
+  // Section 8
+
+  // const [usersList, setUsersList] = useState([])
+
+  // const addUserHandler = (uName, uAge, uId) => {
+  //   setUsersList((prevState) => {
+  //     return [...prevState, { name: uName, age: uAge, id: uId }];
+
+  //   })
+  // }
+
+  // Section 10
+
 
 
   return (
@@ -77,22 +97,32 @@ function App() {
 
       {/* Section-6 */}
 
-      <section id="goal-form">
+      {/* <section id="goal-form">
         <CourseInput onAddGoal={addGoalHandler} />
       </section>
       <section id="goals">
         {content}
-        {/* {courseGoals.length > 0 && (
+
+        //alternavtive way
+        { {courseGoals.length > 0 && (
           <CourseGoalList
             items={courseGoals}
             onDeleteItem={deleteItemHandler}
           />
         ) // <p style={{ textAlign: 'center' }}>No goals found. Maybe add one?</p>
-        } */}
-      </section>
+        }}
 
 
+      </section> */}
 
+      {/* Section 8 */}
+
+      {/* <AddUser onAddUser={addUserHandler} />
+      <UserList users={usersList} /> */}
+
+      {/* Section 10 */}
+
+      <Login />
 
     </div>
   );
