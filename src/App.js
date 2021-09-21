@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
+import Login from 'c:/users/hp/downloads/01-starting-project/src/components/login/login';
 // import Expenses from "./components/expense/Expenses"
 // import NewExpense from "./components/NewExpense/NewExpense";
 
 // import CourseGoalList from "./components/CourseGoals/CourseGoalList/CourseGoalList"
 // import CourseInput from "./components/CourseGoals/CourseInput/CourseInput"
 
-import AddUser from "./components/User/AddUser"
-import UserList from "./components/User/UserList"
+// import AddUser from "./components/User/AddUser"
+// import UserList from "./components/User/UserList"
 
 
 // const DUMMY_EXPENSE = [
@@ -74,14 +75,16 @@ function App() {
 
   // Section 8
 
-  const [usersList, setUsersList] = useState([])
+  // const [usersList, setUsersList] = useState([])
 
-  const addUserHandler = (uName, uAge) => {
-    setUsersList((prevState) => {
-      return [...prevState, { name: uName, age: uAge }];
+  // const addUserHandler = (uName, uAge, uId) => {
+  //   setUsersList((prevState) => {
+  //     return [...prevState, { name: uName, age: uAge, id: uId }];
 
-    })
-  }
+  //   })
+  // }
+
+  // Section 10
 
 
 
@@ -114,10 +117,12 @@ function App() {
 
       {/* Section 8 */}
 
-      <AddUser onAddUser={addUserHandler} />
-      <UserList users={usersList} />
+      {/* <AddUser onAddUser={addUserHandler} />
+      <UserList users={usersList} /> */}
 
+      {/* Section 10 */}
 
+      <Login />
 
     </div>
   );

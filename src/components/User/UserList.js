@@ -1,5 +1,5 @@
 import React from 'react'
-import Card from './UI/Card'
+import Card from '../UI/Card'
 import styles from "./userList.module.css"
 function UserList(props) {
     return (
@@ -7,7 +7,7 @@ function UserList(props) {
             <ul>
                 {
                     props.users.map((user) => (
-                        <li>{user.name}</li>
+                        <li key={user.id}>{user.name} () {user.age}</li>
                     ))
                 }
             </ul>

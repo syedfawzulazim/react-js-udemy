@@ -1,8 +1,8 @@
-import React, { useState, useRef } from 'react'
-import Card from './UI/Card'
-import Button from './UI/Button'
+import React, { useState, useRef, useEffect } from 'react'
+import Card from '../UI/Card'
+import Button from '../UI/Button'
 import styles from "./addUser.module.css"
-import ErrorModal from './UI/ErrorModal'
+import ErrorModal from '../UI/ErrorModal'
 
 function AddUser(props) {
     const nameInputRef = useRef()
@@ -42,7 +42,7 @@ function AddUser(props) {
             return;
         }
 
-        props.onAddUser(userName, userAge)
+        props.onAddUser(userName, userAge, Math.random().toString())
         setUserName('')
         setUserAge('')
     }
@@ -70,6 +70,7 @@ function AddUser(props) {
                             ref={ageInputRef}
                         />
                         <Button type="submit">Add User</Button>
+                        <Button type="submit">Login</Button>
                     </form>
                 </div>
             </Card>
