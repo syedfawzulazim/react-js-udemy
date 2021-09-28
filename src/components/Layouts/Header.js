@@ -3,12 +3,14 @@ import mealsImage from "../../assets/meals.jpg"
 import styles from "./Header.module.css"
 import HeaderCartButton from './HeaderCartButton'
 
-function Header() {
+
+
+function Header(props) {
     return (
         <>
             <header className={styles.header}>
                 <h1>ReactMeals</h1>
-                <HeaderCartButton onClick={() => console.log(12)} />
+                <HeaderCartButton onClick={props.onShowCart} />
             </header>
             <div className={styles['main-image']}>
                 <img src={mealsImage} alt="Table of food" />
